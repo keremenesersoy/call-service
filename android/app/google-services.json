@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "542914496192",
+    "project_id": "call-service-f7b4d",
+    "storage_bucket": "call-service-f7b4d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:542914496192:android:753cc8d5e3755cbf628f25",
+        "android_client_info": {
+          "package_name": "com.example.call_service"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCDTNBHnJugZbKJiQCA-EXH5nBtuumuFt0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
