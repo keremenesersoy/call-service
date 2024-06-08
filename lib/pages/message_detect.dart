@@ -1,10 +1,12 @@
+import 'package:call_service/auth/models/message_model.dart';
+import 'package:call_service/repository/message_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:telephony/telephony.dart';
 import 'package:permission_handler/permission_handler.dart';
 
-
-
 class SmsReceiverPage extends StatefulWidget {
+  const SmsReceiverPage({super.key});
+
   @override
   _SmsReceiverPageState createState() => _SmsReceiverPageState();
 }
@@ -32,6 +34,11 @@ class _SmsReceiverPageState extends State<SmsReceiverPage> {
       onNewMessage: (SmsMessage message) {
         setState(() {
           _sms = message.body ?? "Boş mesaj";
+          if(message.address != null){
+            MessageModel messageModel = MessageModel(number: message.address ?? "null");
+            MessageRepository messageRepository = MessageRepository();
+            messageRepository.addMessage(messageModel);
+          }
         });
       },
       listenInBackground: false,
@@ -42,7 +49,7 @@ class _SmsReceiverPageState extends State<SmsReceiverPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("SMS Receiver"),
+        title: const Text("SMS Receiver"),
       ),
       body: Center(
         child: Text(_sms),

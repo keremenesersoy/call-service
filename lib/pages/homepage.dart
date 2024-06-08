@@ -10,25 +10,22 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  
   // MessageRepository messageRepository = MessageRepository();
   // MessageModel messageModel = MessageModel(number: "05373867407");
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.amber,
-        centerTitle: true,
-        title: const Text('Call Service'),
-      ),
-      body: PageView(
-        children: [
-          CallDetect(),
-          SmsReceiverPage(),
-          
-        ],
-      )
-    );
+        appBar: AppBar(
+          backgroundColor: Colors.amber,
+          centerTitle: true,
+          title: const Text('Call Service'),
+        ),
+        body: PageView(
+          children: [
+            const CallDetect(),
+            SmsReceiverPage(),
+          ],
+        ));
   }
 }
